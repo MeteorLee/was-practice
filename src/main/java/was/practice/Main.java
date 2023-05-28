@@ -1,4 +1,4 @@
-package org.example;
+package was.practice;
 
 public class Main {
     public static void main(String[] args) {
