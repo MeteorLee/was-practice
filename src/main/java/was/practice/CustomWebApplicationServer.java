@@ -27,6 +27,9 @@ public class CustomWebApplicationServer {
             while ((clientSocket = serverSocket.accept()) != null) {
                 logger.info("[CustomWebApplicationServer] client connected  ");
 
+                /**
+                 * Step2 : 사용자 요청이 들어올 때마다 Thread를 새로 생성해서 사용자 요청을 처리하도록 한다.
+                 */
                 new Thread(new ClientRequestHandler(clientSocket)).start();
             }
 
