@@ -59,9 +59,45 @@ CGI(Common Gateway Interface)
 - 대표적인 WAS로는 톰캣이 있다.
 
 
+## Servlet 실습 (계산기 서블릿 만들기)
+
+### 상속 구조
+
+Javx.servlet.Servlet (interface)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
+
+javax.servlet.GenericServlet (abstract class)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
+
+Javax.servlet.http.HttpServlet (abstract class)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑
+
+UserDefinedServlet (concrete class)
 
 
+### Servlet 인터페이스
 
+- 서블릿 컨테이너가 서블릿 인터페이스에 있는 메소드들을 호출함
+- 서블릿 생명주기와 관련된 메소드
+  - init(), service(), destroy()
+- 서블릿 기타 메소드
+  - getServletConfig()
+  - getServletInfo()
+
+  
+### URL 인코딩 (=퍼센트 인코딩)
+
+- URL로 사용할 수 없는 문자(예약어, Non-ASC|| 문자(한글) 등)를 사용할 수 있도록 인코딩하는 것
+- 인코딩된 문자는 triplet(세 개가 한 세트)로 인코딩 되며 각각을 %다음에 두 개의 16진수로 표현함
+- 예약 문자
+  - https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%84%BC%ED%8A%B8_%EC%9D%B8%EC%BD%94%EB%94%A9
+  
 
 
 
